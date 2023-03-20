@@ -7,7 +7,7 @@ This project implements a FastAPI API that imitates how a bank app would work. I
 - Register and Login with email/password, JWT authentication
 - Make a registry of credit and debit transactions in your account that will be saved in a PostgreSQL db
 - Send a report by email with the average of movements for the month
-- Contenized 
+- Containerized with Docker
 
 ## Technologies Used
 - FastAPI
