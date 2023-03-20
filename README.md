@@ -46,6 +46,7 @@ This project has 3 endpoints to handle the necessary operations:
 The endpoint for logging into an existing account requires two form-data parameters: 
 1. Email: This is the email address associated with the account. 
 2. Password: This is the password associated with the account.  
+3. It's important to save the Token retrived after the user login, it will be required to create transactions, and to view user info.
 
 - /transactions: This endpoint allows you to make transactions between user accounts. 
 The endpoint for making transactions requires a JSON object as input. The format for the object is as follows: 
@@ -56,3 +57,4 @@ The endpoint for making transactions requires a JSON object as input. The format
 } 
 ``` 
 Where <value> is the amount to be transferred, and "<name_movement>" is the label or name associated with the transaction.
+
