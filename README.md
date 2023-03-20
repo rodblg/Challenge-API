@@ -22,14 +22,14 @@ This project implements a FastAPI API that imitates how a bank app would work. I
 3. Activate the virtual environment: `venv\Scripts\activate.bat`
 4. Install the requirements: `pip install -r requirements.txt`
 5. Start the application: `uvicorn app.main:app`
-6. Access the API on your localhost
+6. Access the API with this endpoint structure: `http://127.0.0.1:8000/{path_operation}`
 7. You can send the Requests with Postman
 
 ## Installation and Configuration Instructions with the Docker image
 This project has been pushed to the Docker Hub as an image. To access and run the image locally, complete the following steps: 
 1. Pull the image from the Docker Hub: `docker pull roblancas/challenge-api`
 2. Run the image with the docker-compose command: `docker-compose -f docker-compose-prod.yml up -d`
-3. Access the API on your localhost
+3. Access the API with this endpoint structure: `http://127.0.0.1:8000/{path_operation}`
 4. You can send the Requests with Postman
 
 ## Path Operations
