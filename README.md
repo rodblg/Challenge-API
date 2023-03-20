@@ -19,11 +19,40 @@ This project implements a FastAPI API that imitates how a bank app would work. I
 ## Installation and Configuration Instructions without the Docker image
 1. Clone the repository
 2. Create a virtual environment: `py -m venv venv`
-3. Install the requirements: `pip install -r requirements.txt`
-4. Start the application: `uvicorn app.main:app`
+3. Activate the virtual environment: `venv\Scripts\activate.bat`
+4. Install the requirements: `pip install -r requirements.txt`
+5. Start the application: `uvicorn app.main:app`
+6. Access the API on your localhost
+7. You can send the Requests with Postman
 
 ## Installation and Configuration Instructions with the Docker image
 This project has been pushed to the Docker Hub as an image. To access and run the image locally, complete the following steps: 
 1. Pull the image from the Docker Hub: `docker pull roblancas/challenge-api`
 2. Run the image with the docker-compose command: `docker-compose -f docker-compose-prod.yml up -d`
-3. Access the API on http://localhost:5005
+3. Access the API on your localhost
+4. You can send the Requests with Postman
+
+## Path Operations
+This project has 3 endpoints to handle the necessary operations: 
+- /users: This endpoint allows you to create new user accounts and manage existing user accounts. Requires a JSON object as input. The format for the object is as follows: 
+``` 
+{ 
+    "name": "<name>", 
+    "email": "<email>", 
+    "password": "<password>" 
+} 
+``` 
+- /login: This endpoint allows you to log into an existing account with a username and password.
+The endpoint for logging into an existing account requires two form-data parameters: 
+1. Email: This is the email address associated with the account. 
+2. Password: This is the password associated with the account.  
+
+- /transactions: This endpoint allows you to make transactions between user accounts. 
+The endpoint for making transactions requires a JSON object as input. The format for the object is as follows: 
+``` 
+{ 
+    "value": <value>, 
+    "name_movement": "<name_movement>" 
+} 
+``` 
+Where <value> is the amount to be transferred, and "<name_movement>" is the label or name associated with the transaction.
