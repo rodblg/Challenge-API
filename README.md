@@ -58,3 +58,8 @@ The endpoint for making transactions requires a JSON object as input. The format
 ``` 
 Where <value> is the amount to be transferred, and "<name_movement>" is the label or name associated with the transaction.
 
+## Postman configuration
+You can use the postman collection to make new requests into the API following this steps:
+1. Download the json file into your local machine.
+2. Import it into your workspace.
+3. To use the collection you have to create a postman environment and define the variable URL as your localhost `http://127.0.0.1:8000`.
