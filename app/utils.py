@@ -80,7 +80,7 @@ def send_bank_statement(total_balance, per_month,
     sender_email = settings.SENDER_EMAIL
     sender_password = settings.SENDER_PASSWORD
     recipient_email = settings.RECIPIENT_EMAIL
-    subject = 'Test Email'
+    subject = 'Bank Montly Statement'
 
     statement_month = 'Here is your bank statement for the month of '
     
