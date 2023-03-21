@@ -7,6 +7,9 @@ from .. import oauth2
 
 import os
 
+#TO DO: 
+# To improve the functionality of this API, it should be considered the use of an asynchronous task manager to send the email.
+# With this tool the API would not be compromised in case the email is not delivered
 folder_path = 'static'
 
 router = APIRouter()
@@ -53,8 +56,12 @@ def bank_statement(db : Session = Depends(get_db),
     file_name = str(user.email).split('@')[0] + str(user.created_at).split(' ')[0] + '.csv'
     file_path = os.path.join(folder_path,file_name)
 
-    total_balance, per_month, credit_transactions_avg_month, debit_transactions_avg_month = utils.extract_info_csv(file_path)
+    try:
+        total_balance, per_month, credit_transactions_avg_month, debit_transactions_avg_month = utils.extract_info_csv(file_path)
 
-    utils.send_bank_statement(total_balance, per_month, credit_transactions_avg_month,
-                               debit_transactions_avg_month,user.name)
+        utils.send_bank_statement(total_balance, per_month, credit_transactions_avg_month,
+                                debit_transactions_avg_month,user.name)
+    except Exception as e:
+        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
     return {'message': 'Bank Statement sent to the user'}
