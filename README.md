@@ -15,6 +15,7 @@ This project implements a FastAPI API that imitates how a bank app would work. I
 - Alembic
 - Docker
 - Python
+- PostgreSQL
 
 ## Installation and Configuration Instructions without the Docker image
 1. Clone the repository
