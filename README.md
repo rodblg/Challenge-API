@@ -28,9 +28,10 @@ This project implements a FastAPI API that imitates how a bank app would work. I
 ## Installation and Configuration Instructions with the Docker image
 This project has been pushed to the Docker Hub as an image. To access and run the image locally, complete the following steps: 
 1. Pull the image from the Docker Hub: `docker pull roblancas/challenge-api`
-2. Run the image with the docker-compose command: `docker-compose -f docker-compose-prod.yml up -d`
-3. Access the API with this endpoint structure: `http://127.0.0.1:8000/{path_operation}`
-4. You can send the Requests with Postman
+2. Update your credentials in the `environments/production.env` file. For more information about the environment variables check the `credentials_example.env` file
+3. Run the image with the docker-compose command: `docker-compose -f docker-compose-prod.yml up -d`
+4. Access the API with this endpoint structure: `http://127.0.0.1:8000/{path_operation}`
+5. You can send the Requests with Postman
 
 ## Path Operations
 This project has 3 endpoints to handle the necessary operations: 
