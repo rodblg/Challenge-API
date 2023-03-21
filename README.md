@@ -64,3 +64,6 @@ You can use the postman collection to make new requests into the API following t
 1. Download the json file into your local machine.
 2. Import it into your workspace.
 3. To use the collection you have to create a postman environment and define the variable URL as your localhost `http://127.0.0.1:8000`in case it is not defined.
+
+## CSV file
+When a new user is submitted to the database a csv file is generated. It is named using the user's email and the date of creation. After each transaction the file is modified with the respective movements of the account.
